@@ -38,7 +38,7 @@ export default function Navbar() {
         <Link href="#home" onClick={(e) => handleLinkClick(e, "#home")} className="flex items-center gap-3 group">
           <div className="relative w-12 h-12 rounded-full overflow-hidden bg-white shadow-sm border border-gray-100 group-hover:scale-105 transition-transform">
             <Image 
-              src="https://scontent.frba3-1.fna.fbcdn.net/v/t39.30808-6/577741112_122150669804901232_1492367642684869286_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=1d70fc&_nc_eui2=AeHkB9FTg6qrm5XJhAceBYIGP2fUwSw7paY_Z9TBLDulpmb9b2RDzClZVDORdL1I4_rBU6IRJL0cVJ9DWwnBGlrR&_nc_ohc=Rv63wVyezyMQ7kNvwE3RdRL&_nc_oc=Adq_8u90-Nt5lKmJen8lw-10DW0iuY40haxzjwBoOynexLqBgBhAWbet0T2XP_hhonU&_nc_zt=23&_nc_ht=scontent.frba3-1.fna&_nc_gid=dRrHLGJNh6afmuZCrJVsDw&oh=00_Af1cfW2hxOEfmfuqSTHV40sxBXyMg7DeZoL6H7tb0xREnQ&oe=69F11FD9"
+              src="https://scontent.frba3-1.fna.fbcdn.net/v/t39.30808-6/577741112_122150669804901232_1492367642684869286_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=1d70fc&_nc_eui2=AeHkB9FTg6qrm5XJhAceBYIGP2fUwSw7paY_Z9TBLDulpmb9b2RDzClZVDORdL1I4_rBU6IRJL0cVJ9DWwnBGlrR&_nc_ohc=7IuCS5QV7ykQ7kNvwFcjcvd&_nc_oc=Adr2S9FaDX4dkLcITvDP14RqmRU_UbFMS4Vs4V278C4XFLAAC6bQ9_s4E-i0k6Sduc0&_nc_zt=23&_nc_ht=scontent.frba3-1.fna&_nc_gid=MOZPXakMnSUgK5DqtJR3Ug&_nc_ss=7a2a8&oh=00_Af07tbg1m0L3D7oPzBMxHhIJy-S3KJafVviYXxOZsC5-mA&oe=69F7B759"
               alt="Al Karama Logo"
               fill
               className="object-cover"

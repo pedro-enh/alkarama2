@@ -1,9 +1,10 @@
 "use client";
 import React, { useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 import { productData } from "@/data/translations";
-import { ChevronRight, ShieldCheck, TrendingUp, Users, Target, ArrowRight, Phone, MessageCircle, Mail } from "lucide-react";
+import { ChevronRight, ShieldCheck, TrendingUp, Users, Target, ArrowRight, Phone, MessageCircle, Mail, MapPin } from "lucide-react";
 
 export default function Home() {
   const { t, lang } = useLanguage();
@@ -36,7 +37,6 @@ export default function Home() {
       
       {/* 1. HERO SECTION */}
       <section id="home" className="relative h-screen min-h-[700px] flex items-center pt-20">
-        {/* Abstract Green Gradient Background */}
         <div className="absolute inset-0 z-0 bg-gradient-to-br from-[#165a49] via-[#1f7a63] to-[#289b7e] overflow-hidden">
           <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-white/10 rounded-full blur-[120px] mix-blend-overlay animate-slow-zoom" />
           <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-black/20 rounded-full blur-[100px] mix-blend-overlay" />
@@ -68,7 +68,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Floating Finance Card UI */}
             <div className="lg:w-1/2 hidden lg:flex justify-end animate-slide-up" style={{ animationDelay: '0.6s', animationFillMode: 'both' }}>
               <div className="relative w-96 h-64 bg-white/10 backdrop-blur-2xl rounded-3xl border border-white/30 shadow-[0_30px_60px_rgba(0,0,0,0.3)] p-8 transform rotate-[-5deg] hover:rotate-0 transition-transform duration-700 ease-out">
                 <div className="flex justify-between items-center mb-8">
@@ -118,25 +117,30 @@ export default function Home() {
             ))}
           </div>
 
+          {/* Location Map Presence */}
           <div className="bg-white rounded-[3rem] p-8 md:p-16 shadow-2xl border border-gray-100 flex flex-col lg:flex-row items-center gap-12 reveal">
             <div className="lg:w-1/2">
               <h3 className="text-3xl font-bold text-gray-900 mb-6">{t.about.map_title}</h3>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                 {t.about.cities}
               </p>
-              <div className="flex gap-4">
-                 <div className="w-32 h-20 bg-gray-50 rounded-xl flex items-center justify-center border border-gray-100 shadow-sm"><span className="font-bold text-primary">Nouakchott</span></div>
-                 <div className="w-32 h-20 bg-gray-50 rounded-xl flex items-center justify-center border border-gray-100 shadow-sm"><span className="font-bold text-primary">Nouadhibou</span></div>
+              <div className="flex flex-wrap gap-4">
+                 {["Nouakchott", "Nouadhibou", "Rosso", "Kiffa", "Atar", "Zouerate"].map((city) => (
+                   <div key={city} className="px-6 py-3 bg-gray-50 rounded-xl flex items-center justify-center border border-gray-100 shadow-sm">
+                     <span className="font-bold text-primary">{city}</span>
+                   </div>
+                 ))}
               </div>
             </div>
             <div className="lg:w-1/2 w-full h-[400px] rounded-3xl overflow-hidden shadow-lg border-4 border-white">
-               <Image 
-                 src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?auto=format&fit=crop&q=80&w=1000"
-                 alt="Map presence"
-                 width={800}
-                 height={400}
-                 className="object-cover w-full h-full hover:scale-105 transition-transform duration-700"
-               />
+               <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m13!1d3848.330!2d-15.978243!3d18.088711!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDA1JzE5LjQiTiAxNcKwNTgnNDEuNyJX!5e0!3m2!1sen!2smr!4v1620000000000!5m2!1sen!2smr" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen 
+                loading="lazy"
+              ></iframe>
             </div>
           </div>
         </div>
@@ -149,7 +153,9 @@ export default function Home() {
         <div className="container mx-auto px-6 relative z-10">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 reveal">
             <div>
-              <h2 className="text-primary font-bold tracking-widest uppercase mb-3 text-sm">Produits</h2>
+              <h2 className="text-primary font-bold tracking-widest uppercase mb-3 text-sm">
+                {lang === 'ar' ? 'المنتجات' : 'Produits'}
+              </h2>
               <h3 className="text-4xl md:text-5xl font-bold text-gray-900">{t.products.title}</h3>
             </div>
           </div>
@@ -175,19 +181,19 @@ export default function Home() {
                   
                   <div className="space-y-3 mb-6">
                     <div className="flex justify-between items-center text-sm border-b border-gray-50 pb-2">
-                      <span className="text-gray-500">Montant</span>
+                      <span className="text-gray-500">{t.products.amount_label}</span>
                       <span className="font-semibold text-primary">{product.range}</span>
                     </div>
                     <div className="flex justify-between items-center text-sm">
-                      <span className="text-gray-500">Durée</span>
+                      <span className="text-gray-500">{t.products.duration_label}</span>
                       <span className="font-medium text-gray-900">{product.duration}</span>
                     </div>
                   </div>
 
-                  <button className="w-full py-3 bg-gray-50 hover:bg-primary hover:text-white text-gray-700 rounded-xl font-medium transition-colors flex items-center justify-center gap-2 group-hover:bg-primary group-hover:text-white">
+                  <Link href={`/produits/${product.id}`} className="w-full py-3 bg-gray-50 hover:bg-primary hover:text-white text-gray-700 rounded-xl font-medium transition-colors flex items-center justify-center gap-2 group-hover:bg-primary group-hover:text-white">
                     {t.products.view_details}
                     <ArrowRight size={16} className={`transition-transform ${lang === 'ar' ? 'rotate-180' : ''} group-hover:translate-x-1`} />
-                  </button>
+                  </Link>
                 </div>
               </div>
             ))}
@@ -199,7 +205,6 @@ export default function Home() {
       <section id="contact" className="py-32 relative bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="glass-card bg-white rounded-[3rem] p-8 md:p-16 flex flex-col lg:flex-row gap-16 reveal">
-            {/* Contact Info */}
             <div className="lg:w-1/3">
               <h2 className="text-primary font-bold tracking-widest uppercase mb-3 text-sm">{t.nav.contact}</h2>
               <h3 className="text-4xl font-bold text-gray-900 mb-8">{t.contact.title}</h3>
@@ -210,7 +215,7 @@ export default function Home() {
                     <Phone size={24} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-900 mb-1">Téléphone</h4>
+                    <h4 className="font-bold text-gray-900 mb-1">{lang === 'ar' ? 'الهاتف' : 'Téléphone'}</h4>
                     <p className="text-gray-600">+222 34 40 84 83</p>
                   </div>
                 </div>
@@ -241,7 +246,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Contact Form */}
             <div className="lg:w-2/3 bg-gray-50 p-8 md:p-12 rounded-[2rem] border border-gray-100">
               <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
