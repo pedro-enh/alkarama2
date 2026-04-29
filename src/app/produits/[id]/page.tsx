@@ -91,11 +91,19 @@ export default function ProductDetail() {
                <h3 className="text-xl font-bold text-gray-900 mb-6 relative z-10">{t.products.contact_us}</h3>
                
                <div className="flex flex-col sm:flex-row gap-4 relative z-10">
-                  <a href="https://wa.me/22234408483" target="_blank" rel="noopener noreferrer" className="btn-primary flex-1">
+                  <a 
+                    href={`https://wa.me/22234408483?text=${encodeURIComponent(lang === 'ar' ? `مرحباً، أود الحصول على مزيد من المعلومات حول منتج ${product.title}.` : `Bonjour, je souhaite avoir plus d'informations sur le produit ${product.title}.`)}`} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="btn-primary flex-1"
+                  >
                     <MessageCircle size={20} />
                     {t.whatsapp}
                   </a>
-                  <a href={`mailto:alkaramafinance@gmail.com?subject=Demande d'information: ${product.title}`} className="btn-outline !text-primary !border-primary hover:!bg-primary hover:!text-white flex-1">
+                  <a 
+                    href={`mailto:alkaramafinance@gmail.com?subject=${encodeURIComponent(lang === 'ar' ? `طلب معلومات: ${product.title}` : `Demande d'information : ${product.title}`)}`} 
+                    className="btn-outline !text-primary !border-primary hover:!bg-primary hover:!text-white flex-1"
+                  >
                     <Mail size={20} />
                     {t.email}
                   </a>

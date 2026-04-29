@@ -114,31 +114,7 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="bg-white rounded-[3rem] p-8 md:p-16 shadow-2xl border border-gray-100 flex flex-col lg:flex-row items-center gap-12 reveal">
-            <div className="lg:w-1/2">
-              <h3 className="text-3xl font-bold text-gray-900 mb-6">{t.about.map_title}</h3>
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                {t.about.cities}
-              </p>
-              <div className="flex flex-wrap gap-4">
-                 {["Nouakchott", "Nouadhibou", "Rosso", "Kiffa", "Atar", "Zouerate"].map((city) => (
-                   <div key={city} className="px-6 py-3 bg-gray-50 rounded-xl flex items-center justify-center border border-gray-100 shadow-sm">
-                     <span className="font-bold text-primary">{city}</span>
-                   </div>
-                 ))}
-              </div>
-            </div>
-            <div className="lg:w-1/2 w-full h-[400px] rounded-3xl overflow-hidden shadow-lg border-4 border-white">
-               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m13!1d3848.330!2d-15.978243!3d18.088711!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDA1JzE5LjQiTiAxNcKwNTgnNDEuNyJX!5e0!3m2!1sen!2smr!4v1620000000000!5m2!1sen!2smr" 
-                width="100%" 
-                height="100%" 
-                style={{ border: 0 }} 
-                allowFullScreen 
-                loading="lazy"
-              ></iframe>
-            </div>
-          </div>
+
         </div>
       </section>
 
@@ -156,7 +132,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 mb-24">
             {productData[lang as keyof typeof productData].map((product: any, index: number) => (
               <div key={index} className={`group bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-[0_20px_40px_rgb(31,122,99,0.15)] transition-all duration-500 hover:-translate-y-2 reveal reveal-delay-${index % 3 + 1}`}>
                 <div className="relative h-48 w-full overflow-hidden">
@@ -193,6 +169,32 @@ export default function Home() {
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="bg-white rounded-[3rem] p-8 md:p-16 shadow-2xl border border-gray-100 flex flex-col lg:flex-row items-center gap-12 reveal mt-24 relative z-20">
+            <div className="lg:w-1/2">
+              <h3 className="text-3xl font-bold text-gray-900 mb-6">{t.about.map_title}</h3>
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                {t.about.cities}
+              </p>
+              <div className="flex flex-wrap gap-4">
+                 {["Nouakchott", "Nouadhibou", "Rosso", "Kiffa", "Atar", "Zouerate"].map((city) => (
+                   <div key={city} className="px-6 py-3 bg-gray-50 rounded-xl flex items-center justify-center border border-gray-100 shadow-sm">
+                     <span className="font-bold text-primary">{city}</span>
+                   </div>
+                 ))}
+              </div>
+            </div>
+            <div className="lg:w-1/2 w-full h-[400px] rounded-3xl overflow-hidden shadow-lg border-4 border-white">
+               <iframe 
+                src="https://maps.google.com/maps?q=18.088711,-15.978243&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen 
+                loading="lazy"
+              ></iframe>
+            </div>
           </div>
         </div>
       </section>
