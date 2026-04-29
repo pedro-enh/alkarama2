@@ -36,29 +36,22 @@ export default function Home() {
     <div className="relative overflow-hidden bg-[#f9fafb]">
       
       {/* 1. HERO SECTION */}
-      <section id="home" className="relative h-screen min-h-[700px] flex items-center pt-20">
+      <section id="home" className="relative min-h-screen flex items-center pt-32 pb-20 lg:pt-20 lg:pb-0">
         <div className="absolute inset-0 z-0 bg-gradient-to-br from-[#165a49] via-[#1f7a63] to-[#289b7e] overflow-hidden">
           <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-white/10 rounded-full blur-[120px] mix-blend-overlay animate-slow-zoom" />
           <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-black/20 rounded-full blur-[100px] mix-blend-overlay" />
-          <Image
-            src="https://scontent.frba3-2.fna.fbcdn.net/v/t39.30808-6/579038242_122150669954901232_3437938905477336518_n.png?_nc_cat=106&ccb=1-7&_nc_sid=2a1932&_nc_eui2=AeHEF7yZkbVpl5Tdn7b9KKpHQ10VTDhCr7JDXRVMOEKvsibIYvrZNSimCzKBhybb6tYGMi4jnh6T2vbEQU1Fzc5c&_nc_ohc=3ZvDUqcvxdYQ7kNvwGuZU17&_nc_oc=Adr8b6buLrQH6YYtW-C2bcSGySdMYd1HGihItzSOFqb9D_Xw-UkthHeQ7vqx2UnytvI&_nc_zt=23&_nc_ht=scontent.frba3-2.fna&_nc_gid=BXD1JY0fFLu9IJzzkXfXpQ&_nc_ss=7a2a8&oh=00_Af1koXk_27is816hWjhPyicGplstU-u5P6JY59F49nUOyw&oe=69F3BD3A"
-            alt="Hero Background"
-            fill
-            className="object-cover opacity-20 mix-blend-luminosity animate-slow-zoom"
-            priority
-          />
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center gap-16">
-            <div className="lg:w-1/2 text-white">
-              <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-[1.1] tracking-tight animate-slide-up">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+            <div className="lg:w-1/2 text-white order-2 lg:order-1 text-center lg:text-start">
+              <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 leading-[1.1] tracking-tight animate-slide-up">
                 {t.hero.title}
               </h1>
-              <p className="text-xl md:text-2xl text-white/80 mb-10 leading-relaxed font-light animate-fade-in" style={{ animationDelay: '0.2s', animationFillMode: 'both' }}>
+              <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-10 leading-relaxed font-light animate-fade-in" style={{ animationDelay: '0.2s', animationFillMode: 'both' }}>
                 {t.hero.subtitle}
               </p>
-              <div className="flex flex-col sm:flex-row gap-5 animate-slide-up" style={{ animationDelay: '0.4s', animationFillMode: 'both' }}>
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center lg:justify-start animate-slide-up" style={{ animationDelay: '0.4s', animationFillMode: 'both' }}>
                 <a href="#contact" onClick={(e) => handleScrollTo(e, '#contact')} className="btn-primary !bg-white !text-primary hover:!bg-gray-100">
                   {t.hero.cta_contact}
                 </a>
@@ -68,20 +61,24 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="lg:w-1/2 hidden lg:flex justify-end animate-slide-up" style={{ animationDelay: '0.6s', animationFillMode: 'both' }}>
-              <div className="relative w-96 h-64 bg-white/10 backdrop-blur-2xl rounded-3xl border border-white/30 shadow-[0_30px_60px_rgba(0,0,0,0.3)] p-8 transform rotate-[-5deg] hover:rotate-0 transition-transform duration-700 ease-out">
-                <div className="flex justify-between items-center mb-8">
-                  <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                    <ShieldCheck className="text-white" />
+            <div className="lg:w-1/2 w-full order-1 lg:order-2 animate-slide-up" style={{ animationDelay: '0.6s', animationFillMode: 'both' }}>
+              <div className="relative w-full max-w-lg mx-auto aspect-square md:aspect-[4/3] lg:aspect-square rounded-[2rem] sm:rounded-[3rem] overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.4)] border-4 border-white/20 group">
+                <Image
+                  src="https://scontent.frba3-2.fna.fbcdn.net/v/t39.30808-6/579038242_122150669954901232_3437938905477336518_n.png?_nc_cat=106&ccb=1-7&_nc_sid=2a1932&_nc_eui2=AeHEF7yZkbVpl5Tdn7b9KKpHQ10VTDhCr7JDXRVMOEKvsibIYvrZNSimCzKBhybb6tYGMi4jnh6T2vbEQU1Fzc5c&_nc_ohc=3ZvDUqcvxdYQ7kNvwGuZU17&_nc_oc=Adr8b6buLrQH6YYtW-C2bcSGySdMYd1HGihItzSOFqb9D_Xw-UkthHeQ7vqx2UnytvI&_nc_zt=23&_nc_ht=scontent.frba3-2.fna&_nc_gid=BXD1JY0fFLu9IJzzkXfXpQ&_nc_ss=7a2a8&oh=00_Af1koXk_27is816hWjhPyicGplstU-u5P6JY59F49nUOyw&oe=69F3BD3A"
+                  alt="Al Karama Finance Hero"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
+                <div className="absolute bottom-6 left-6 right-6">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center">
+                      <ShieldCheck className="text-white" size={20} />
+                    </div>
+                    <span className="text-white font-bold text-lg">{t.company_name}</span>
                   </div>
-                  <span className="text-white/80 font-medium">{t.company_name}</span>
-                </div>
-                <div className="space-y-4">
-                  <div className="h-4 w-3/4 bg-white/20 rounded-full" />
-                  <div className="h-4 w-1/2 bg-white/20 rounded-full" />
-                </div>
-                <div className="absolute bottom-8 right-8 text-white font-bold text-2xl">
-                  {t.islamic_finance}
+                  <div className="text-white/80 font-medium text-sm">{t.islamic_finance}</div>
                 </div>
               </div>
             </div>
