@@ -27,7 +27,7 @@ export default function Footer() {
       
       <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 mb-16 relative z-10">
         <div className="col-span-1 md:col-span-2">
-          <h3 className="text-white text-2xl font-bold mb-6">Al Karama Finance</h3>
+          <h3 className="text-white text-2xl font-bold mb-6">{t.company_name}</h3>
           <p className="mb-8 max-w-sm leading-relaxed text-gray-400">
             {t.about.desc}
           </p>
@@ -65,7 +65,7 @@ export default function Footer() {
           <ul className="space-y-4">
             <li className="flex gap-3 text-gray-400">
               <MapPin className="text-primary shrink-0" size={20} />
-              <span>{lang === "ar" ? "نواكشوط، موريتانيا" : "Nouakchott, Mauritanie"}</span>
+              <span>{t.contact.address}</span>
             </li>
             <li className="flex gap-3 text-gray-400">
               <Phone className="text-primary shrink-0" size={20} />
@@ -86,7 +86,7 @@ export default function Footer() {
         className="whatsapp-float group flex items-center gap-2"
         title={t.footer.contact_us}
       >
-        <span className="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-300 font-bold whitespace-nowrap">WhatsApp</span>
+        <span className="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-300 font-bold whitespace-nowrap">{t.footer.whatsapp}</span>
         <MessageCircle size={28} />
       </a>
     </footer>

@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 import { productData } from "@/data/translations";
-import { ChevronRight, ShieldCheck, TrendingUp, Users, Target, ArrowRight, Phone, MessageCircle, Mail, MapPin } from "lucide-react";
+import { ShieldCheck, TrendingUp, Users, Target, ArrowRight, Phone, MessageCircle, Mail } from "lucide-react";
 
 export default function Home() {
   const { t, lang } = useLanguage();
@@ -74,14 +74,14 @@ export default function Home() {
                   <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
                     <ShieldCheck className="text-white" />
                   </div>
-                  <span className="text-white/80 font-medium">Al Karama Finance</span>
+                  <span className="text-white/80 font-medium">{t.company_name}</span>
                 </div>
                 <div className="space-y-4">
                   <div className="h-4 w-3/4 bg-white/20 rounded-full" />
                   <div className="h-4 w-1/2 bg-white/20 rounded-full" />
                 </div>
                 <div className="absolute bottom-8 right-8 text-white font-bold text-2xl">
-                  Islamic Finance
+                  {t.islamic_finance}
                 </div>
               </div>
             </div>
@@ -117,7 +117,6 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Location Map Presence */}
           <div className="bg-white rounded-[3rem] p-8 md:p-16 shadow-2xl border border-gray-100 flex flex-col lg:flex-row items-center gap-12 reveal">
             <div className="lg:w-1/2">
               <h3 className="text-3xl font-bold text-gray-900 mb-6">{t.about.map_title}</h3>
@@ -154,7 +153,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 reveal">
             <div>
               <h2 className="text-primary font-bold tracking-widest uppercase mb-3 text-sm">
-                {lang === 'ar' ? 'المنتجات' : 'Produits'}
+                {t.nav.products}
               </h2>
               <h3 className="text-4xl md:text-5xl font-bold text-gray-900">{t.products.title}</h3>
             </div>
@@ -173,7 +172,7 @@ export default function Home() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-80" />
                   <div className="absolute bottom-4 left-4 right-4 text-white">
                     <h4 className="font-bold text-xl mb-1">{product.title}</h4>
-                    <span className="text-xs bg-primary text-white px-2 py-1 rounded-md font-medium">Islamic Finance</span>
+                    <span className="text-xs bg-primary text-white px-2 py-1 rounded-md font-medium">{t.islamic_finance}</span>
                   </div>
                 </div>
                 <div className="p-6">
@@ -215,7 +214,7 @@ export default function Home() {
                     <Phone size={24} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-900 mb-1">{lang === 'ar' ? 'الهاتف' : 'Téléphone'}</h4>
+                    <h4 className="font-bold text-gray-900 mb-1">{t.contact.phone}</h4>
                     <p className="text-gray-600">+222 34 40 84 83</p>
                   </div>
                 </div>
@@ -225,7 +224,7 @@ export default function Home() {
                     <MessageCircle size={24} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-900 mb-1">WhatsApp</h4>
+                    <h4 className="font-bold text-gray-900 mb-1">{t.whatsapp}</h4>
                     <a href="https://wa.me/22234408483" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
                       +222 34 40 84 83
                     </a>
@@ -237,7 +236,7 @@ export default function Home() {
                     <Mail size={24} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-900 mb-1">Email</h4>
+                    <h4 className="font-bold text-gray-900 mb-1">{t.email}</h4>
                     <a href="mailto:alkaramafinance@gmail.com" className="text-primary hover:underline">
                       alkaramafinance@gmail.com
                     </a>

@@ -1,5 +1,9 @@
 export const translations = {
   fr: {
+    company_name: "Al Karama Finance",
+    islamic_finance: "Finance Islamique",
+    whatsapp: "WhatsApp",
+    email: "Email",
     nav: { home: "Accueil", products: "Produits", about: "À Propos", contact: "Contact" },
     hero: {
       title: "Votre partenaire en finance islamique",
@@ -38,14 +42,21 @@ export const translations = {
         financing: "Demande de financement",
         info: "Information",
         support: "Support"
-      }
+      },
+      phone: "Téléphone",
+      address: "Nouakchott, Mauritanie"
     },
     footer: {
       rights: "Tous droits réservés.",
       contact_us: "Contactez-nous sur WhatsApp",
+      whatsapp: "WhatsApp"
     }
   },
   ar: {
+    company_name: "الكرامة للتمويل",
+    islamic_finance: "تمويل إسلامي",
+    whatsapp: "واتساب",
+    email: "البريد الإلكتروني",
     nav: { home: "الرئيسية", products: "منتجاتنا", about: "من نحن", contact: "اتصل بنا" },
     hero: {
       title: "شريككم في التمويل الإسلامي",
@@ -84,11 +95,14 @@ export const translations = {
         financing: "طلب تمويل",
         info: "معلومات",
         support: "دعم فني"
-      }
+      },
+      phone: "الهاتف",
+      address: "نواكشوط، موريتانيا"
     },
     footer: {
       rights: "جميع الحقوق محفوظة.",
       contact_us: "تواصل معنا عبر واتساب",
+      whatsapp: "واتساب"
     }
   }
 };

@@ -45,7 +45,7 @@ export default function Navbar() {
             />
           </div>
           <span className={`font-bold text-xl tracking-tight hidden md:block transition-colors ${isScrolled ? "text-primary" : "text-white"}`}>
-            {lang === 'ar' ? "الكرامة للتمويل" : "Al Karama Finance"}
+            {t.company_name}
           </span>
         </Link>
 

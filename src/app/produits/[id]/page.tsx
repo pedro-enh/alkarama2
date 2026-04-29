@@ -17,8 +17,8 @@ export default function ProductDetail() {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold mb-4 text-gray-900">Produit non trouvé</h1>
-          <Link href="/" className="btn-primary">Retour à l'accueil</Link>
+          <h1 className="text-2xl font-bold mb-4 text-gray-900">{lang === 'ar' ? 'المنتج غير موجود' : 'Produit non trouvé'}</h1>
+          <Link href="/" className="btn-primary">{lang === 'ar' ? 'العودة للرئيسية' : "Retour à l'accueil"}</Link>
         </div>
       </div>
     );
@@ -44,7 +44,7 @@ export default function ProductDetail() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60" />
             <div className="absolute bottom-10 left-10 right-10">
-               <span className="bg-primary text-white px-4 py-1.5 rounded-full text-sm font-bold shadow-lg mb-4 inline-block">Finance Islamique</span>
+               <span className="bg-primary text-white px-4 py-1.5 rounded-full text-sm font-bold shadow-lg mb-4 inline-block">{t.islamic_finance}</span>
                <h1 className="text-4xl md:text-5xl font-bold text-white">{product.title}</h1>
             </div>
           </div>
@@ -93,11 +93,11 @@ export default function ProductDetail() {
                <div className="flex flex-col sm:flex-row gap-4 relative z-10">
                   <a href="https://wa.me/22234408483" target="_blank" rel="noopener noreferrer" className="btn-primary flex-1">
                     <MessageCircle size={20} />
-                    WhatsApp
+                    {t.whatsapp}
                   </a>
                   <a href={`mailto:alkaramafinance@gmail.com?subject=Demande d'information: ${product.title}`} className="btn-outline !text-primary !border-primary hover:!bg-primary hover:!text-white flex-1">
                     <Mail size={20} />
-                    Email
+                    {t.email}
                   </a>
                </div>
                
