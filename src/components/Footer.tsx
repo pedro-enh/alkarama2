@@ -69,7 +69,7 @@ export default function Footer() {
             </li>
             <li className="flex gap-3 text-gray-400">
               <Phone className="text-primary shrink-0" size={20} />
-              <span>+222 34 40 84 83</span>
+              <span dir="ltr" className="inline-block">+222 34 40 84 83</span>
             </li>
           </ul>
         </div>

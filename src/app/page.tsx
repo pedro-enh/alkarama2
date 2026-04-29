@@ -215,7 +215,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="font-bold text-gray-900 mb-1">{t.contact.phone}</h4>
-                    <p className="text-gray-600">+222 34 40 84 83</p>
+                    <p className="text-gray-600" dir="ltr">+222 34 40 84 83</p>
                   </div>
                 </div>
                 
@@ -225,7 +225,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="font-bold text-gray-900 mb-1">{t.whatsapp}</h4>
-                    <a href="https://wa.me/22234408483" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                    <a href="https://wa.me/22234408483" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline inline-block" dir="ltr">
                       +222 34 40 84 83
                     </a>
                   </div>

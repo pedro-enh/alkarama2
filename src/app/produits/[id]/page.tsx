@@ -104,7 +104,7 @@ export default function ProductDetail() {
                <div className="mt-8 flex items-center gap-2 text-sm text-gray-500 justify-center">
                   <Phone size={14} />
                   <span>{lang === 'ar' ? 'أو اتصل بنا مباشرة على: ' : 'Ou appelez-nous directement au : '}</span>
-                  <span className="font-bold text-gray-900">+222 34 40 84 83</span>
+                  <span className="font-bold text-gray-900 inline-block" dir="ltr">+222 34 40 84 83</span>
                </div>
             </div>
           </div>
