@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 import { productData } from "@/data/translations";
-import { ChevronRight, ShieldCheck, TrendingUp, Users, Target, ArrowRight } from "lucide-react";
+import { ChevronRight, ShieldCheck, TrendingUp, Users, Target, ArrowRight, Phone, MessageCircle, Mail } from "lucide-react";
 
 export default function Home() {
   const { t, lang } = useLanguage();
